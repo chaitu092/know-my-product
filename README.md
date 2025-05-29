@@ -37,6 +37,7 @@ Built with **LangChain**, **Streamlit**, and integrations with **OpenAI** and **
   "product_price_inr": 59900
 }
 
+---
 ## 🚀 Getting Started
 
 - 🔧 Prerequisites
@@ -46,6 +47,7 @@ Built with **LangChain**, **Streamlit**, and integrations with **OpenAI** and **
   - Groq
   - Install required packages: `pip install -r requirements.txt`
 
+---
  
 ## 📁 Setup .env File
     Create a .env file in the root directory with: 
@@ -55,10 +57,12 @@ Built with **LangChain**, **Streamlit**, and integrations with **OpenAI** and **
         LANGCHAIN_PROJECT=ItemInsight
         LANGCHAIN_TRACING_V2=true
         `
+---
 
 ## ▶️ Run the App
   `streamlit run product_info.py`
 
+---
 ## 🙌 Acknowledgements
 
     OpenAI for foundational models
