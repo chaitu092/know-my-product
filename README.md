@@ -1,6 +1,4 @@
-# know-my-product
-
-# 🛍️ ItemInsight – AI-Powered Product Info & Price Estimator
+# know-my-product🛍️📦  – Type a Product, Get Smart Info – It's That Easy
 
 **ItemInsight** is a lightweight AI-powered application that delivers concise product summaries and real-time estimated prices in Indian Rupees (INR). Powered by cutting-edge Large Language Models (LLMs) like **GPT-4.1**, **Qwen**, and **LLaMA 3**, it’s perfect for quick product research, comparison, and market value estimation.
 
@@ -36,16 +34,3 @@ Built with **LangChain**, **Streamlit**, and integrations with **OpenAI** and **
   "product_price_eur": 599,
   "product_price_inr": 59900
 }
-
-## 🚀 Getting Started
-
-### 🔧 Prerequisites
-
-- Python 3.9+
-- API keys for:
-  - OpenAI
-  - Groq
-- Install required packages:
-
-```bash
-pip install -r requirements.txt
