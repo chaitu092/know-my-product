@@ -30,9 +30,37 @@ Built with **LangChain**, **Streamlit**, and integrations with **OpenAI** and **
 
 ```json
 {
-  "product_name": "MacBook Air M2 (2023)",
-  "product_details": "A lightweight, high-performance laptop powered by Apple’s M2 chip. Offers long battery life, a Retina display, and smooth macOS experience. Suitable for students, creators, and professionals.",
-  "product_price_usd": 1200,
-  "product_price_eur": 1100,
-  "product_price_inr": 115000
+  "product_name": "Apple AirPods Max 2",
+  "product_details": "The Apple AirPods Max 2 are the anticipated second-generation over-ear wireless headphones from Apple, expected to feature improved active noise cancellation, enhanced audio quality, longer battery life, and updated H-series chip for better connectivity and performance. They retain the premium build with aluminum ear cups, memory foam cushions, and digital crown controls. Expected upgrades include new color options, enhanced transparency mode, and support for lossless audio.",
+  "product_price_usd": 549,
+  "product_price_eur": 599,
+  "product_price_inr": 59900
 }
+
+## 🚀 Getting Started
+
+- 🔧 Prerequisites
+  - Python 3.9+
+  - API keys for:
+  - OpenAI
+  - Groq
+  - Install required packages: `pip install -r requirements.txt`
+
+ 
+## 📁 Setup .env File
+    Create a .env file in the root directory with: 
+        `OPENAI_API_KEY=your-openai-key
+        GROQ_API_KEY=your-groq-key
+        LANGCHAIN_API_KEY=your-langchain-key (optional)
+        LANGCHAIN_PROJECT=ItemInsight
+        LANGCHAIN_TRACING_V2=true
+        `
+
+## ▶️ Run the App
+  `streamlit run product_info.py`
+
+## 🙌 Acknowledgements
+
+    OpenAI for foundational models
+    Groq for blazing-fast inference
+    LangChain for prompt orchestration and LLM ops
