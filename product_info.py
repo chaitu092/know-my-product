@@ -20,6 +20,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 # Define supported models
 models_list = ["gpt-4.1", "llama-3.3-70b-versatile", "gemma2-9b-it", "qwen-qwq-32b"]
 
+
 # Define Pydantic model for structured output
 class Product(BaseModel):
     product_name: str = Field(description="The name of the product")
@@ -28,30 +29,42 @@ class Product(BaseModel):
     product_price_eur: int = Field(description="The tentative price in Euros")
     product_price_inr: int = Field(description="The tentative price in INR")
 
+
 # Define output parser
 parser = JsonOutputParser(pydantic_object=Product)
 format_instructions = parser.get_format_instructions()
+
 
 # Load prompt template from JSON file
 def load_prompt_template(filepath: str) -> PromptTemplate:
     with open(filepath, "r") as f:
         prompt_json = json.load(f)
     return PromptTemplate(
-        template=prompt_json["template"],
-        input_variables=prompt_json["input_variables"]
+        template=prompt_json["template"], input_variables=prompt_json["input_variables"]
     )
 
-# Streamlit UI
-st.title("E-Commerce Product Info Assistant")
-st.markdown("**Enter a product name to get estimated pricing and details in USD, EUR, and INR.**")
 
-option = st.selectbox("Choose an LLM model:", models_list, index=None, placeholder="Select a model")
+# Streamlit UI
+st.title("Know My Product")
+st.sidebar.title("Product Information Tool")
+st.sidebar.markdown(
+    "This tool provides detailed product information and pricing estimates in multiple currencies."
+)
+st.markdown(
+    "**Enter a product name to get estimated pricing and details in USD, EUR, and INR.**"
+)
+
+option = st.selectbox(
+    "Choose an LLM model:", models_list, index=None, placeholder="Select a model"
+)
 
 # Load LLM
 llm = None
 if option:
     if option == "gpt-4.1":
-        llm = ChatOpenAI(model=option, temperature=0.0, api_key=os.getenv("OPENAI_API_KEY"))
+        llm = ChatOpenAI(
+            model=option, temperature=0.0, api_key=os.getenv("OPENAI_API_KEY")
+        )
     else:
         llm = ChatGroq(model=option, temperature=0.0, api_key=os.getenv("GROQ_API_KEY"))
 else:
@@ -60,12 +73,15 @@ else:
 # ChatPromptTemplate with proper variable parsing
 prompt = ChatPromptTemplate(
     messages=[
-        ("system", "You are a product expert and assistant. Respond with product name, detailed description, and estimated prices in JSON format. Always return USD, EUR, and INR prices (integers)."),
+        (
+            "system",
+            "You are a product expert and assistant. Respond with product name, detailed description, and estimated prices in JSON format. Always return USD, EUR, and INR prices (integers).",
+        ),
         ("user", "{input}"),
-        ("assistant", "{format_instructions}")
+        ("assistant", "{format_instructions}"),
     ],
     input_variables=["input"],
-    partial_variables={"format_instructions": format_instructions}
+    partial_variables={"format_instructions": format_instructions},
 )
 
 # User input

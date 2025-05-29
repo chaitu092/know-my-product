@@ -1,9 +1,10 @@
 # know-my-product🛍️📦  – Type a Product, Get Smart Info – It's That Easy
 
-**ItemInsight** is a lightweight AI-powered application that delivers concise product summaries and real-time estimated prices in Indian Rupees (INR). Powered by cutting-edge Large Language Models (LLMs) like **GPT-4.1**, **Qwen**, and **LLaMA 3**, it’s perfect for quick product research, comparison, and market value estimation.
+**know-my-product** is a lightweight AI-powered application that delivers concise product summaries and real-time estimated prices in Indian Rupees (INR). Powered by cutting-edge Large Language Models (LLMs) like **GPT-4.1**, **Qwen**, **gemma** and **LLaMA 3**, it’s perfect for quick product research, comparison, and market value estimation.
 
 Built with **LangChain**, **Streamlit**, and integrations with **OpenAI** and **Groq**, ItemInsight offers a seamless experience with clean UI and structured output.
 
+![know-my-product](image.png)
 ---
 
 ## 📌 Features
