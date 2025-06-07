@@ -6,3 +6,4 @@ langchain-groq
 langchain-core
 langchain-community
 streamlit
+pytest
